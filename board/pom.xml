@@ -21,6 +21,13 @@
 
 	<!-- 라이브러리를 쓸때 디펜던시즈에 넣으면 maven이 알아서 사용  -->
 	<dependencies>
+	<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
+<dependency>
+    <groupId>com.oracle.database.jdbc</groupId>
+    <artifactId>ojdbc6</artifactId>
+    <version>11.2.0.4</version>
+</dependency>
+	
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>

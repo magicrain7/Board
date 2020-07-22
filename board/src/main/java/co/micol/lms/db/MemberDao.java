@@ -78,16 +78,42 @@ public class MemberDao {
 	}
 	
 	public int insert(MemberVo vo) { //insert 맴버삽입
-		int n;
-		return 0; 
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(INSERT_MEMBER);
+			psmt.setString(1, vo.getId());
+			psmt.setString(2, vo.getPassword());
+			psmt.setString(3, vo.getName());
+			psmt.setString(4, vo.getTel());
+			n = psmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return n; 
 	}
 	
 	public int update(MemberVo vo) { // 맴버수정
-		int n;
-		return 0; 
+		int n= 0;
+		try {
+			psmt = conn.prepareStatement(UPDATE_MEMBER);
+			psmt.setString(1, vo.getPassword());
+			psmt.setString(2, vo.getName());
+			psmt.setString(3, vo.getTel());
+			psmt.setString(4, vo.getName());
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return n; 
 	}
 	public int delete(MemberVo vo) { // 맴버삭제
-		int n;
-		return 0; 
+		int n=0;
+		try {
+			psmt = conn.prepareStatement(DELETE_MEMBER);
+			psmt.setString(1, vo.getId());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return n; 
 	}
 }
